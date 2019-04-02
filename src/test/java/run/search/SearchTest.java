@@ -10,11 +10,10 @@ public class SearchTest extends RozApp {
     public void searchTablet() {
         homepage.getSearchInput().val("tablet").pressEnter();
         searchResultPage.getFirst().click();
-        storePage.getBlock(0).hover();
-        storePage.getBlockContent(1).hover();
-        storePage.getBlockContent(2).hover();
-        storePage.getBlockContent(3).hover();
-        storePage.getBlockContent(4).hover();
+        storePage.getBlockByNumber(0).hover();
+        storePage.getBlockCompareIcon(1).hover();
+
+        storePage.getBlockCompareIcon(0);
 
         System.out.println(" ololo");
     }

@@ -3,13 +3,16 @@ package utils.fields;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
-import java.io.IOException;
 
 public interface Field {
 
-    String getResources(String data) throws IOException;
+    String getResources(String data);
 
-    SelenideElement field(String locator) throws IOException;
+    SelenideElement field(String locator);
 
-    ElementsCollection fields(String locator) throws IOException;
+    ElementsCollection fields(String locator);
+
+    ElementsCollection getChildren(String parent, String child);
+
+    SelenideElement getChild(String parent, String child);
 }

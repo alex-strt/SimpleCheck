@@ -29,11 +29,29 @@ public class Fields implements Field {
 
     @Override
     public SelenideElement field(String locator) {
+        System.out.println("Show field\n" +
+                "Locator\n" + getResources(locator));
         return $(By.xpath(getResources(locator)));
     }
 
     @Override
     public ElementsCollection fields(String locator) {
+        System.out.println("Show fields\n" +
+                "Locator\n" + getResources(locator));
         return $$(By.xpath(getResources(locator)));
+    }
+
+    @Override
+    public ElementsCollection getChildren(String parent, String child) {
+        System.out.println("Show field with children\n" +
+                "Locator\n" + getResources(parent) + getResources(child));
+        return $$(By.xpath(getResources(parent) + getResources(child)));
+    }
+
+    @Override
+    public SelenideElement getChild(String parent, String child) {
+        System.out.println("Show field with child\n" +
+                "Locator\n" + getResources(parent) + getResources(child));
+        return $(By.xpath(getResources(parent)));
     }
 }
