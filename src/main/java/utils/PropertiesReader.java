@@ -1,5 +1,6 @@
 package utils;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -17,5 +18,12 @@ public class PropertiesReader {
         } catch (IOException e) {
             return null;
         }
+    }
+
+    public static String readFromTheFile(String path, String data) throws IOException {
+        Properties obj = new Properties();
+        FileInputStream objfile = new FileInputStream(path);
+        obj.load(objfile);
+        return obj.getProperty(data);
     }
 }
