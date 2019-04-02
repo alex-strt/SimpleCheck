@@ -15,6 +15,6 @@ public class StorePage extends Fields {
     }
 
     public SelenideElement getBlockCompareIcon(Integer number) {
-        return getChild("StoreElementBlock", "CompareIcon");
+        return getChild("StoreElementBlock", number, "CompareIcon");
     }
 }

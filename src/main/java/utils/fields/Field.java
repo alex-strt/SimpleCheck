@@ -12,7 +12,7 @@ public interface Field {
 
     ElementsCollection fields(String locator);
 
-    ElementsCollection getChildren(String parent, String child);
+    ElementsCollection getChildren(String parent, int id, String child);
 
-    SelenideElement getChild(String parent, String child);
+    SelenideElement getChild(String parent, int id, String child);
 }

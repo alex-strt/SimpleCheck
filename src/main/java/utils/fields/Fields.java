@@ -42,16 +42,18 @@ public class Fields implements Field {
     }
 
     @Override
-    public ElementsCollection getChildren(String parent, String child) {
+    public ElementsCollection getChildren(String parent, int id, String child) {
+        String locator = getResources(parent) + "[" + id + "]" + getResources(child);
         System.out.println("Show field with children\n" +
-                "Locator\n" + getResources(parent) + getResources(child));
-        return $$(By.xpath(getResources(parent) + getResources(child)));
+                "Locator\n" + locator);
+        return $$(By.xpath(locator));
     }
 
     @Override
-    public SelenideElement getChild(String parent, String child) {
+    public SelenideElement getChild(String parent, int id, String child) {
+        String locator = getResources(parent) + "[" + id + "]" + getResources(child);
         System.out.println("Show field with child\n" +
-                "Locator\n" + getResources(parent) + getResources(child));
-        return $(By.xpath(getResources(parent)));
+                "Locator\n" + locator);
+        return $(By.xpath(locator));
     }
 }
